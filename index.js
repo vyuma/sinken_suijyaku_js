@@ -16,13 +16,13 @@ let img_arr = [
     "robin", "chopper", "franky", "brook", "luffy2"
 ];
 let img_tag_arr = [];
-for (let i = 0; i < 10; i++ ){
+for (let i = 0; i < img_arr.length; i++ ){
     img_tag_arr.push("<img src='img/" + img_arr[i] + ".png'>")
 }
 
 window.onload = function () {
     let arr = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < img_arr.length; i++) {
         arr.push(i);
         arr.push(i);
     }  //[0,0,1,1,2,2,...........8,8,9,9] 合計20の要素
@@ -31,7 +31,7 @@ window.onload = function () {
     let game_board = document.getElementById('game_board');
 
     // div要素作成(カード)
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < 2 * img_arr.length; i++) {
         let div = document.createElement('div');
         div.className = 'card back'; //カードの裏側を表示
         div.number = arr[i]; //プロパティを設定
@@ -74,7 +74,7 @@ function turn(e) {
                 div.className = 'card finish'; //0.5秒で透明
                 cardFirst.className = 'card finish';
                 backTimer = NaN;
-                if (countUnit == 10) { //すべてカードが揃ったら
+                if (countUnit == img_arr.length) { //すべてカードが揃ったら
                     clearInterval(timer);  // timer終了
                     //setInterval(showSecond, 1000)
                 }
