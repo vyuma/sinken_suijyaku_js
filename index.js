@@ -17,7 +17,7 @@ let img_arr = [
 ];
 let img_tag_arr = [];
 for (let i = 0; i < 10; i++ ){
-    img_tag_arr.push("<img src='" + img_arr[i] + ".png'>")
+    img_tag_arr.push("<img src='img/" + img_arr[i] + ".png'>")
 }
 
 window.onload = function () {
