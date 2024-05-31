@@ -28,7 +28,7 @@ img{
 }
 /* 裏の状態 */
 .back {
-    background-image: url('card.png');
+    background-image: url('img/back_blue.png');
     background-size: 150px 200px;
     border-radius: 5px;
 }
