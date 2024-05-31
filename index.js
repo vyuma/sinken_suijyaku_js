@@ -1,3 +1,6 @@
+import { img_arr, explain } from './img_arr.js';
+
+
 // 開始時間
 let startTime;
 // 経過秒数用 タイマーID
@@ -13,13 +16,7 @@ let countUnit = 0;
 // 時間を保存しておく(表示)
 let elapsedTime_str
 
-let img_arr = [
-    "cape", "giant", "humboldt", "king"
-];
 
-let name_arr = [
-    "ケープペンギン","ジャイアントペンギン","フンボルトペンギン","キングペンギン"
-];
 
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
@@ -41,8 +38,6 @@ window.onload = function () {
         let div = document.createElement('div');
         div.className = 'card back'; //カードの裏側を表示
         div.number = arr[i]; //プロパティを設定
-        //console.log(Object.keys(div));
-        //console.log(Object.values(div));
         div.onclick = turn;
         game_board.appendChild(div);
     }
@@ -80,7 +75,7 @@ function turn(e) {
                 div.className = 'card finish'; //1秒で透明
                 cardFirst.className = 'card finish';
                 backTimer = NaN;
-                alert(name_arr[cardFirst.number])
+                alert(explain[cardFirst.number])
                 if (countUnit == img_arr.length) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
                     clearInterval(timer);  // timer終了
                     alert("スコアは" + elapsedTime_str + "点です")
