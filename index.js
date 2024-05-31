@@ -12,7 +12,7 @@ let cardFirst;
 let countUnit = 0;
 
 let img_arr = [
-    "cape", "giant", "humboldt", "king"
+    "cape", "fiordland", "galapagos", "gentoo", "giant", "hanejiro", "hige", "humboldt", "iwatobi", //"king", "kinme", "macaroni", "magellanic", "royal", "snares", "syureta"
 ];
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){

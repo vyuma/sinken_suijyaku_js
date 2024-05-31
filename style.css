@@ -1,13 +1,13 @@
 #game_board {
-    width: 1200px;
+    width: 1000px;
     height: 550px;
     overflow: hidden;
     margin:auto
 }
 
 .card {
-    width: 120px;
-    height: 160px;
+    width: 150px;
+    height: 200px;
     line-height: 80px;
     border: 1px silver;
     text-align: center;
@@ -22,14 +22,14 @@
 }
 
 img{
-    width: 12px;
-    height: 160px;
+    width: 150px;
+    height: 200px;
     border-radius: 5px;
 }
 /* 裏の状態 */
 .back {
     background-image: url('card.png');
-    background-size: 120px 160px;
+    background-size: 150px 200px;
     border-radius: 5px;
 }
 
@@ -41,6 +41,12 @@ img{
 
 /* 経過秒数 */
 #result {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Yu Gothic"
+}
+
+#explainatin {
     font-size: 1.2em;
     font-weight: bold;
     font-family: "Yu Gothic"
