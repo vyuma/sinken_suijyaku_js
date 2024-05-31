@@ -1,32 +1,36 @@
 #game_board {
-    width: 310px;
-    height: 340px;
+    width: 1200px;
+    height: 550px;
     overflow: hidden;
+    margin:auto
 }
 
 .card {
-    width: 60px;
-    height: 80px;
+    width: 120px;
+    height: 160px;
     line-height: 80px;
-    border: 1px solid silver;
-    border-radius: 10px;
+    border: 1px silver;
     text-align: center;
     font-size: 26px;
     font-weight: bold;
-    box-shadow: gray 2px 2px;
-    background: white;
+    background: #d9d9d9;
     float: left;
     cursor: pointer;
+    border-radius: 5px;
+    margin: 6px
+   
 }
 
 img{
-    width: 60px;
-    height: 80px;
+    width: 12px;
+    height: 160px;
+    border-radius: 5px;
 }
 /* 裏の状態 */
 .back {
     background-image: url('card.png');
-    background-size: 60px 80px;
+    background-size: 120px 160px;
+    border-radius: 5px;
 }
 
 /* 終了時 */
@@ -39,4 +43,5 @@ img{
 #result {
     font-size: 1.2em;
     font-weight: bold;
+    font-family: "Yu Gothic"
 }
