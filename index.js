@@ -12,8 +12,7 @@ let cardFirst;
 let countUnit = 0;
 
 let img_arr = [
-    "luffy", "zoro", "sanji", "nami", "usopp",
-    "robin", "chopper", "franky", "brook", "luffy2"
+    "cape", "giant", "humboldt", "king"
 ];
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
