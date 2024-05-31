@@ -74,6 +74,7 @@ function turn(e) {
                 cardFirst.className = 'card finish';
                 backTimer = NaN;
                 if (countUnit == img_arr.length) { //すべてカードが揃ったら
+                    
                     clearInterval(timer);  // timer終了
                     //setInterval(showSecond, 1000)
                 }
