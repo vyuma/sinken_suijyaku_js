@@ -10,10 +10,17 @@ let flgFirst = true;
 let cardFirst;
 // そろえた枚数(ペアができるたびに+1 10ペアで終了)
 let countUnit = 0;
+// 時間を保存しておく(表示)
+let elapsedTime_str
 
 let img_arr = [
     "cape", "giant", "humboldt", "king"
 ];
+
+let name_arr = [
+    "ケープペンギン","ジャイアントペンギン","フンボルトペンギン","キングペンギン"
+];
+
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
     img_tag_arr.push("<img src='img/" + img_arr[i] + ".png'>")
@@ -24,7 +31,7 @@ window.onload = function () {
     for (let i = 0; i < img_arr.length; i++) {
         arr.push(i);
         arr.push(i);
-    }  //[0,0,1,1,2,2,...........8,8,9,9] 合計20の要素
+    }  //[0,0,1,1,2,2,...........8,8,9,9] 要素数はペンギンの数の2倍
  
     shuffle(arr);// シャッフル [1,7,3,4,4,5......]
     let game_board = document.getElementById('game_board');
@@ -70,15 +77,15 @@ function turn(e) {
         if (cardFirst.number == div.number) {
             countUnit++; //揃ったペアの数
             backTimer = setTimeout(function () {
-                div.className = 'card finish'; //0.5秒で透明
+                div.className = 'card finish'; //1秒で透明
                 cardFirst.className = 'card finish';
                 backTimer = NaN;
-                if (countUnit == img_arr.length) { //すべてカードが揃ったら
-                    
+                alert(name_arr[cardFirst.number])
+                if (countUnit == img_arr.length) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
                     clearInterval(timer);  // timer終了
-                    //setInterval(showSecond, 1000)
+                    alert("スコアは" + elapsedTime_str + "点です")
                 }
-            }, 500)
+            }, 1000)
         } else {
             backTimer = setTimeout(function () {
                 div.className = 'card back';
@@ -87,20 +94,22 @@ function turn(e) {
                 cardFirst.innerHTML = '';
                 cardFirst = null;
                 backTimer = NaN;
-            }, 500);
+            }, 1000);
         }
         flgFirst = true;
     }
 }
 // タイマー開始
 function startTimer() {
-    timer = setInterval(showSecond, 1000);
+    timer = setInterval(showSecond, 100);
 }
 // 秒数表示
 function showSecond() {
     let nowTime = new Date();
-    let elapsedTime = Math.floor((nowTime - startTime) / 1000);
-    let str = '経過秒数: ' + elapsedTime + '秒';
+    //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
+    elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
+    let str = '経過秒数: ' + elapsedTime_str + '秒';
     let re = document.getElementById('result');
     re.innerHTML = str;
+    
 }
