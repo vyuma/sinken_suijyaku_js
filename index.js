@@ -1,3 +1,4 @@
+import { img_arr, name_arr } from './pengin.js';
 // 開始時間
 let startTime;
 // 経過秒数用 タイマーID
@@ -14,14 +15,6 @@ let countUnit = 0;
 let elapsedTime_str
 // explainの要素取得
 const explain = document.getElementById('explain');
-
-let img_arr = [
-    "cape", "fiordland", "galapagos", "gentoo", "giant", "hanejiro", "hige", "humboldt", "iwatobi", //"king", "kinme", "macaroni", "magellanic", "royal", "snares", "syureta"
-];
-
-let name_arr = [
-    "ケープペンギン\n","ジャイアントペンギン","フンボルトペンギン","キングペンギン",'キンメペンギン','マカロニペンギン','マゼランペンギン','ロイヤルペンギン','スナレスペンギン','シュレーターペンギン'
-];
 
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
