@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ペンギン逢わせ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="game.css">
+  </head>
+  <body>
+    <audio preload="auto" src="audio/カードめくり1.mp3" id="audio"></audio>
+
+    <div class="container">
+      <div id="game_board"></div>
+      <div id="result_field">
+        <div class="timer">
+          <div id="result">
+          </div>
+        </div>
+        <div>
+          <div class="explain">
+            ペンギン解説
+          </div>
+          <div id="explain">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div id = "endmodal">
+      <h1>TimeUp...</h1>
+      <img src = "/img/crying_penguin.png" class = "modal_penguin"/>
+      <button onclick="location.href='start.html'" class = "modal_button">スタートに戻る</button>
+    </div>
+    
+    <script src="game.js" type="module"></script>
+
+  </body>
+</html>

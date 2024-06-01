@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" media="screen" href="index.css">
     <title>ペンギン逢わせ</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" media="screen" href="style.css">
-  </head>
-  <body>
-    <audio preload="auto" src="audio/カードめくり1.mp3" id="audio"></audio>
-
+</head>
+<body>
     <div class="container">
-      <div id="game_board"></div>
-      <div id="result_field">
-        <div class="timer">
-          <div id="result">
-          </div>
+        <p><img src="gif/ぺんぎん逢わせ (1).gif" alt="ぺんぎん逢わせ(1)"></p>
+        <div class="buttons">
+        <div class="game_start">
+                ゲームスタート
         </div>
-        <div>
-          <div class="explain">
-            ペンギン解説
-          </div>
-          <div id="explain">
-          </div>
+            <button id="story_button" type="button">
+                ストーリー
+            </button> 
         </div>
-        
-      </div>
     </div>
-    
-    <div id = "endmodal">
-      <h1>TimeUp...</h1>
-      <img src = "/img/crying_penguin.png" class = "modal_penguin"/>
-      <button onclick="location.href='start.html'" class = "modal_button">スタートに戻る</button>
-    </div>
-    
-    <script src="index.js" type="module"></script>
 
-  </body>
+    <div id="popup-wrapper">
+        <div id="popup_content">
+            <div id="story_text">
+                もう人間やめたい…。<br>
+                週８でバイトに追われて疲れ果てていたある男子大学生は、バイト先の塾の授業中、<br>教えている途中に居眠りをしてしまった。<br>
+                気が付いた瞬間、目の前には一面の氷、いろんな種類のたくさんのペンギン、そしてペンギンになってしまった自分にぴたりとくっついている２匹の赤ちゃん双子ペンギン。<br>
+                小さい時から母ペンギンになりたかった彼は、かわいい２匹の子供を大人になるまで育てたいと思った。<br>
+                母ペンギン生活16日目、初めての散歩で目を離した瞬間、2匹の子供が迷子になってしまった！<br>
+                でも母ペンギンはペンギンになりたての初心者ペンギンでさあ大変！<br>
+                ペンギンが沢山いるペンギン島では似たようなペンギンが沢山いて子どもがどの子か分からない！<br>
+                ペンギンの親子が再会できるようにペンギン達を逢わせよう！<br>
+                逢わせたら感動の再会？！
+            </div>
+            <div id="close">閉じる</div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
 </html>
