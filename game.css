@@ -128,6 +128,21 @@ img{
 	background: #27acd9;
 }
 
+
+#resultmodal {
+    /* noneからblockに変更することがある */
+    display: none;  
+    /* 重ね合わせ表示の順番を指定 */
+    z-index: 1;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 40%; 
+    height: 70%; 
+    overflow: auto; 
+    background-color: rgb(178, 248, 187); 
+    border-radius: 13px;
+
 #screen{
     background-color: rgba(0, 0, 0, .7);
     position: fixed;

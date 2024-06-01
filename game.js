@@ -17,6 +17,8 @@ let elapsedTime_str
 const explain = document.getElementById('explain');
 // ゲームカードの枚数
 const game_card = 9;
+//スコア
+var score = 0;
 
 
 
@@ -67,6 +69,17 @@ function shuffle(arr) {
     }
     return arr;
 }
+
+//ゲームクリア時の画面表示処理
+function Clear(){
+    //スコアは9999の持ち時間ひく経過時間の10倍
+    score = (9999 - (Number(elapsedTime_str)*10))
+    alert(score)
+    // resultの要素取得
+    const resultmodal = document.getElementById('resultmodal');   
+    resultmodal.style.display = "block";
+}
+
 // カードクリック時の処理
 function turn(e) {
     let div = e.target; //クリックしたカード
@@ -97,7 +110,8 @@ function turn(e) {
                 alert(name_arr[cardFirst.number])
                 if (countUnit == game_card) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
                     clearInterval(timer);  // timer終了
-                    alert("スコアは" + elapsedTime_str + "点です")
+                    // alert("スコアは" + elapsedTime_str + "点です")
+                    Clear(elapsedTime_str)
                 }
             }, 1000)
         } else {
@@ -130,7 +144,7 @@ function startTimer() {
 // 秒数表示
 function showSecond() {
     let nowTime = new Date();
-    if (nowTime - startTime < 9100){
+    if (nowTime - startTime < 999100){ //最大秒数は999秒
         //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
         elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
         let str  = elapsedTime_str + '';
