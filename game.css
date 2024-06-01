@@ -127,3 +127,18 @@ width: 300px;
 	color: #fff;
 	background: #27acd9;
 }
+
+#resultmodal {
+    /* noneからblockに変更することがある */
+    display: none;  
+    /* 重ね合わせ表示の順番を指定 */
+    z-index: 1;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 40%; 
+    height: 70%; 
+    overflow: auto; 
+    background-color: rgb(178, 248, 187); 
+    border-radius: 13px;
+}
