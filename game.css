@@ -142,6 +142,7 @@ img{
     overflow: auto; 
     background-color: rgb(178, 248, 187); 
     border-radius: 13px;
+}
 
 #screen{
     background-color: rgba(0, 0, 0, .7);
