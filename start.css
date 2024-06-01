@@ -50,7 +50,7 @@ body{
   padding: 6px 10px;
 }
 #popup-wrapper {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .7);
     position: fixed;
     top: 0;
     left: 0;
@@ -70,10 +70,19 @@ body{
     position: relative;
 }
 #story_text{
-    margin: 20px;
-    font-size: 20px;
+    margin: 5% auto;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-size: 25px;
     text-align: center;
-
+    line-height: 180%;
+    color: white;
+    text-shadow: 0px 0px 1px #ffffff,
+    0px 0px 20px #90ceff,
+    0px 0px 40px #90ceff,
+    0px 0px 60px #e1ffff,
+    0px 0px 80px #e1ffff;
+    font-family: "Yu Gothic";
 }
 
 #close {
@@ -81,4 +90,12 @@ body{
     top: 0;
     right: 5px;
     cursor: pointer;
+    border: solid;
+    font-size: 20px;
+    font-family: "Yu Gothic";
+    color:#ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top:5px;
+    margin-right:5px;
   }
