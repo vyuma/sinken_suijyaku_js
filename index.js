@@ -1,3 +1,4 @@
+import { img_arr, name_arr } from './pengin.js';
 // 開始時間
 let startTime;
 // 経過秒数用 タイマーID
@@ -12,14 +13,8 @@ let cardFirst;
 let countUnit = 0;
 // 時間を保存しておく(表示)
 let elapsedTime_str
-
-let img_arr = [
-    "cape", "fiordland", "galapagos", "gentoo", "giant", "hanejiro", "hige", "humboldt", "iwatobi", //"king", "kinme", "macaroni", "magellanic", "royal", "snares", "syureta"
-];
-
-let name_arr = [
-    "ケープペンギン","ジャイアントペンギン","フンボルトペンギン","キングペンギン"
-];
+// explainの要素取得
+const explain = document.getElementById('explain');
 
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
@@ -27,6 +22,8 @@ for (let i = 0; i < img_arr.length; i++ ){
 }
 
 window.onload = function () {
+
+    
     let arr = [];
     for (let i = 0; i < img_arr.length; i++) {
         arr.push(i);
@@ -80,6 +77,9 @@ function turn(e) {
                 div.className = 'card finish'; //1秒で透明
                 cardFirst.className = 'card finish';
                 backTimer = NaN;
+                // ここにペンギンの名前を表示する処理を追加
+                explain.innerHTML = name_arr[cardFirst.number];
+
                 alert(name_arr[cardFirst.number])
                 if (countUnit == img_arr.length) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
                     clearInterval(timer);  // timer終了
@@ -108,8 +108,9 @@ function showSecond() {
     let nowTime = new Date();
     //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
     elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
-    let str = '経過秒数: ' + elapsedTime_str + '秒';
+    let str  = elapsedTime_str + '秒';
     let re = document.getElementById('result');
     re.innerHTML = str;
+    // 999秒になったら終了する処理（アラートの表示）
     
 }
