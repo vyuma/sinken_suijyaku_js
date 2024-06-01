@@ -45,7 +45,7 @@ window.onload = function () {
         arr.push(arr_int[i]);
         arr.push(arr_int[i]);
     }
-    // shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
+    shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
 
 
     let game_board = document.getElementById('game_board');
