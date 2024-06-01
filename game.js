@@ -131,8 +131,10 @@ function turn(e) {
 //時間切れ処理
 function Timeup(){
     // modalの要素取得
-    const endmodal = document.getElementById('endmodal');   
+    const screen = document.getElementById('screen');
+    const endmodal = document.getElementById('endmodal'); 
     endmodal.style.display = "block";
+    screen.style.display = "block";
 }
 
 // タイマー開始

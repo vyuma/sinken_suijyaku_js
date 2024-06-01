@@ -24,6 +24,7 @@
     box-shadow: 0 0 10px rgba(96, 10, 10, 0.105);
     margin: 20px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .story{
@@ -35,6 +36,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.078);
     text-decoration: none;
+    font-weight: bold;
 }
 
 body{
@@ -43,11 +45,12 @@ body{
 
 #story_button{
     display: block;
+    padding: 20px 20px; 
   margin: 20px auto;
   background-color: rgb(51, 110, 221);
   color: white;
-  border: 0;
-  padding: 6px 10px;
+  border: 10px;
+    border-radius: 10px;
 }
 #popup-wrapper {
     background-color: rgba(0, 0, 0, .7);
