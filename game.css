@@ -58,7 +58,7 @@ img{
 
 /* 経過秒数 */
 #result {
-    padding: 50px 0;
+    padding: 10px 0;
     margin: 100px 0;
     font-size: 5em;
     text-align: center;
@@ -70,7 +70,7 @@ img{
 }
 
 .explain {
-    font-size: 1.4em;
+    font-size: 1.0em;
     font-weight: bold;
     font-family: "Yu Gothic";
     text-align: center;
@@ -80,13 +80,13 @@ img{
 }
 
 #explain {
-    font-size: 1.4em;
+    font-size: 1.0em;
     font-weight: bold;
     font-family: "Yu Gothic";
     text-align: center;
     background-color: rgba(119, 240, 178, 0.251);
-width: 300px;
-    height: 200px;
+    width: 300px;   
+    height: 325px;
 }
 
 #endmodal {
@@ -126,4 +126,14 @@ width: 300px;
 .modal_button:hover {
 	color: #fff;
 	background: #27acd9;
+}
+
+#screen{
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
