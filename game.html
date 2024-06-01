@@ -8,6 +8,7 @@
   </head>
   <body>
     <audio preload="auto" src="audio/カードめくり1.mp3" id="audio"></audio>
+    <audio preload="auto" loop src="audio/254_long_BPM180.mp3" id="bgm"></audio>
 
     <div class="container">
       <div id="game_board"></div>
@@ -28,16 +29,16 @@
     </div>
     <div id="screen">
       <div id = "endmodal">
-        <h1>TimeUp...</h1>
+        <h1 class="timeUp">TimeUp...</h1>
         <img src = "/img/crying_penguin.png" class = "modal_penguin"/>
+        <h2 class="timeUp">お母さん....</h2>
         <button onclick="location.href='index.html'" class = "modal_button">スタートに戻る</button>
       </div>
     </div>
     
     <div id = "resultmodal">
-      <h1>結果</h1>
-      <p>スコア</p>
-      <p></p>
+      <h1 class="clear">結果</h1>
+      <h3 id="game-result"></h3>
       <button onclick="location.href='index.html'" class = "modal_button">スタートに戻る</button>
     </div>
     <script src="game.js" type="module"></script>

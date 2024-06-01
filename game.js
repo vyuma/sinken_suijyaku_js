@@ -20,6 +20,9 @@ const game_card = 9;
 //スコア
 var score = 0;
 
+// お手付き回数
+let err = 0;
+
 
 
 let img_tag_arr = [];
@@ -42,7 +45,7 @@ window.onload = function () {
         arr.push(arr_int[i]);
         arr.push(arr_int[i]);
     }
-    shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
+    // shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
 
 
     let game_board = document.getElementById('game_board');
@@ -58,6 +61,9 @@ window.onload = function () {
         game_board.appendChild(div);
     }
     startTime = new Date(); // 開始時刻を取得
+
+    document.getElementById('bgm').play();
+
     startTimer(); // タイマー開始
 }
 //シャッフル用関数
@@ -73,11 +79,16 @@ function shuffle(arr) {
 //ゲームクリア時の画面表示処理
 function Clear(){
     //スコアは9999の持ち時間ひく経過時間の10倍
-    score = (9999 - (Number(elapsedTime_str)*10))
+    score = (9999 - (Number(elapsedTime_str)*50)-err*100)
+    if (score < 0){
+        score = 0
+    }
     alert(score)
     // resultの要素取得
     const resultmodal = document.getElementById('resultmodal');   
-    resultmodal.style.display = "block";
+    resultmodal.style.display = "flex";
+    const game_result = document.getElementById('game-result');
+    game_result.innerHTML = "スコアは" + score + "点です";
 }
 
 // カードクリック時の処理
@@ -107,7 +118,7 @@ function turn(e) {
                 // ここにペンギンの名前を表示する処理を追加
                 explain.innerHTML = name_arr[cardFirst.number];
 
-                alert(name_arr[cardFirst.number])
+                // alert(name_arr[cardFirst.number])
                 if (countUnit == game_card) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
                     clearInterval(timer);  // timer終了
                     // alert("スコアは" + elapsedTime_str + "点です")
@@ -123,6 +134,7 @@ function turn(e) {
                 cardFirst = null;
                 backTimer = NaN;
             }, 1000);
+            err += 1;
         }
         flgFirst = true;
     }
