@@ -45,7 +45,7 @@ window.onload = function () {
         arr.push(arr_int[i]);
         arr.push(arr_int[i]);
     }
-    shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
+    // shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
 
 
     let game_board = document.getElementById('game_board');
@@ -61,6 +61,9 @@ window.onload = function () {
         game_board.appendChild(div);
     }
     startTime = new Date(); // 開始時刻を取得
+
+    document.getElementById('bgm').play();
+
     startTimer(); // タイマー開始
 }
 //シャッフル用関数
@@ -83,7 +86,9 @@ function Clear(){
     alert(score)
     // resultの要素取得
     const resultmodal = document.getElementById('resultmodal');   
-    resultmodal.style.display = "block";
+    resultmodal.style.display = "flex";
+    const game_result = document.getElementById('game-result');
+    game_result.innerHTML = "スコアは" + score + "点です";
 }
 
 // カードクリック時の処理

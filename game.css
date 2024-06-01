@@ -103,25 +103,33 @@ img{
     background-color: rgb(115, 199, 255); 
     border-radius: 13px;
 }
-
+.timeUp{
+    text-align: center;
+}
 .modal_penguin{
-    position: fixed;
-    inset: 0;
-    margin: auto;
+    display: block;
+    padding: 20px 20px;
+    margin: 20px auto;
 }
 
 .modal_button{
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	width: 80px;
-	margin: auto;
-	padding: 1rem 4rem;
-	font-weight: bold;
-    font-size: medium;
-	border: 2px solid #27acd9;
-	color: #27acd9;
-	transition: 0.5s;
+    display: block;
+    padding: 20px 20px; 
+    margin: 20px auto;
+    background-color: rgb(51, 110, 221);
+    color: white;
+    border: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "Yu Gothic";
+    cursor: pointer;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: .3s;
 }
 .modal_button:hover {
 	color: #fff;
@@ -132,6 +140,8 @@ img{
 #resultmodal {
     /* noneからblockに変更することがある */
     display: none;  
+    flex-direction: column;
+    justify-content: center;
     /* 重ね合わせ表示の順番を指定 */
     z-index: 1;
     position: fixed;
@@ -140,8 +150,16 @@ img{
     width: 40%; 
     height: 70%; 
     overflow: auto; 
-    background-color: rgb(178, 248, 187); 
+    background-color: rgba(186, 255, 195, 0.93); 
     border-radius: 13px;
+}
+.clear{
+    text-align: center;
+    margin-top: 50px;
+}
+#game-result{
+    text-align: center;
+    margin: 50px;
 }
 
 #screen{

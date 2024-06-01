@@ -14,3 +14,13 @@ popupWrapper.addEventListener('click', e => {
     popupWrapper.style.display = 'none';
   }
 });
+
+// 最初の処理
+
+const confirm = document.getElementById('audio-confirmation');
+
+confirm.addEventListener('click', () => {
+  confirm.style.display = 'none';
+  const audio = document.getElementById('audio');
+  audio.play();
+})
