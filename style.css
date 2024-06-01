@@ -1,8 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 #game_board {
-    width: 1000px;
-    height: 550px;
-    overflow: hidden;
-    margin:auto
+    margin: 0 0;
+    width: 980px;
+    height: 650px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -18,7 +26,6 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 6px
-   
 }
 
 img{
@@ -38,16 +45,44 @@ img{
     opacity: 0;
     cursor: default;
 }
+#result_field{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 300px;
+    margin: 0 0;
+}
+
 
 /* 経過秒数 */
 #result {
-    font-size: 1.2em;
+    padding: 50px 0;
+    margin: 100px 0;
+    font-size: 5em;
+    text-align: center;
     font-weight: bold;
-    font-family: "Yu Gothic"
+    font-family: "Yu Gothic";
+    background-color: rgba(159, 250, 250, 0.251);
+    border-radius: 10px;
+    
 }
 
-#explainatin {
-    font-size: 1.2em;
+.explain {
+    font-size: 1.4em;
     font-weight: bold;
-    font-family: "Yu Gothic"
+    font-family: "Yu Gothic";
+    text-align: center;
+    background-color: rgba(13, 255, 118, 0.785);
+
+
+}
+
+#explain {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: "Yu Gothic";
+    text-align: center;
+    background-color: rgba(119, 240, 178, 0.251);
+    width: 300px;
+    height: 200px;
 }
