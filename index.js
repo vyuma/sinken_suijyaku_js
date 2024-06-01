@@ -34,7 +34,7 @@ window.onload = function () {
     let game_board = document.getElementById('game_board');
 
     // div要素作成(カード)
-    for (i = 0; i < 2 * img_arr.length; i++) {
+    for (let i = 0; i < 2 * img_arr.length; i++) {
         let div = document.createElement('div');
         div.className = 'card back'; //カードの裏側を表示
         div.number = arr[i]; //プロパティを設定
@@ -50,7 +50,7 @@ window.onload = function () {
 function shuffle(arr) {
     let n = arr.length;
     while (n) { //nが0になったら終了      ここで毎回-1
-        i = Math.floor(Math.random() * n--);
+        let i = Math.floor(Math.random() * n--);
         [arr[n], arr[i]] = [arr[i], arr[n]]
     }
     return arr;
