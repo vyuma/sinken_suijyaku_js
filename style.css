@@ -95,11 +95,35 @@ width: 300px;
     /* 重ね合わせ表示の順番を指定 */
     z-index: 1;
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
+    inset: 0;
+    margin: auto;
+    width: 40%; 
+    height: 70%; 
     overflow: auto; 
     background-color: rgb(115, 199, 255); 
     border-radius: 13px;
+}
+
+.modal_penguin{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+}
+
+.modal_button{
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 80px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+    font-size: medium;
+	border: 2px solid #27acd9;
+	color: #27acd9;
+	transition: 0.5s;
+}
+.modal_button:hover {
+	color: #fff;
+	background: #27acd9;
 }
