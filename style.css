@@ -89,7 +89,7 @@ img{
     height: 200px;
 }
 
-.endmodal {
+#endmodal {
     /* noneからblockに変更することがある */
     display: none;  
     /* 重ね合わせ表示の順番を指定 */
