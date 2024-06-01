@@ -15,6 +15,9 @@ let countUnit = 0;
 let elapsedTime_str
 // explainの要素取得
 const explain = document.getElementById('explain');
+// modalの要素取得
+const endmodal = document.getElementById('endmodal');
+
 
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
@@ -99,6 +102,12 @@ function turn(e) {
         flgFirst = true;
     }
 }
+
+//時間切れ処理
+function Timeup(){
+    endmodal.style.display = "block";
+}
+
 // タイマー開始
 function startTimer() {
     timer = setInterval(showSecond, 100);
@@ -106,11 +115,16 @@ function startTimer() {
 // 秒数表示
 function showSecond() {
     let nowTime = new Date();
-    //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
-    elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
-    let str  = elapsedTime_str + '秒';
-    let re = document.getElementById('result');
-    re.innerHTML = str;
+    if (nowTime - startTime < 9100){
+        //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
+        elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
+        let str  = elapsedTime_str + '秒';
+        let re = document.getElementById('result');
+        re.innerHTML = str;
+    }else{
+        Timeup()
+    }
+    
     // 999秒になったら終了する処理（アラートの表示）
     
 }
