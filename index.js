@@ -15,6 +15,8 @@ let countUnit = 0;
 let elapsedTime_str
 // explainの要素取得
 const explain = document.getElementById('explain');
+// ゲームカードの枚数
+const game_card = 9;
 
 
 
@@ -23,20 +25,28 @@ for (let i = 0; i < img_arr.length; i++ ){
     img_tag_arr.push("<img src='img/" + img_arr[i] + ".png'>")
 }
 
+
 window.onload = function () {
 
-    
-    let arr = [];
+    const arr = [];
+    let arr_int = [];
     for (let i = 0; i < img_arr.length; i++) {
-        arr.push(i);
-        arr.push(i);
-    }  //[0,0,1,1,2,2,...........8,8,9,9] 要素数はペンギンの数の2倍
+        arr_int.push(i);
+    }  //[0,1,2,3,4,5,,6,7,8,9] 要素数はペンギンの数の2倍
  
-    shuffle(arr);// シャッフル [1,7,3,4,4,5......]
+    shuffle(arr_int);// シャッフル [1,7,3,4,5......]
+
+    for (let i = 0; i < game_card; i++) {
+        arr.push(arr_int[i]);
+        arr.push(arr_int[i]);
+    }
+    shuffle(arr); // シャッフル [1,1,7,7,3,3,4,4,5,5......]
+
+
     let game_board = document.getElementById('game_board');
 
     // div要素作成(カード)
-    for (let i = 0; i < 2 * img_arr.length; i++) {
+    for (let i = 0; i < 2 * game_card; i++) {
         let div = document.createElement('div');
         div.className = 'card back'; //カードの裏側を表示
         div.number = arr[i]; //プロパティを設定
@@ -60,6 +70,8 @@ function shuffle(arr) {
 // カードクリック時の処理
 function turn(e) {
     let div = e.target; //クリックしたカード
+    document.getElementById('audio').pause();
+    document.getElementById('audio').play();
     // カードのタイマー処理が動作中は return
     if (backTimer) return; //連続で押せないように
     // 裏向きのカードをクリックした場合は画像を表示する
@@ -83,7 +95,7 @@ function turn(e) {
                 explain.innerHTML = name_arr[cardFirst.number];
 
                 alert(name_arr[cardFirst.number])
-                if (countUnit == img_arr.length) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
+                if (countUnit == game_card) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
                     clearInterval(timer);  // timer終了
                     alert("スコアは" + elapsedTime_str + "点です")
                 }
@@ -119,13 +131,13 @@ function showSecond() {
     if (nowTime - startTime < 9100){
         //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
         elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
-        let str  = elapsedTime_str + '秒';
+        let str  = elapsedTime_str + '';
         let re = document.getElementById('result');
         re.innerHTML = str;
     }else{
         Timeup()
     }
     
-    // 999秒になったら終了する処理（アラートの表示）
     
 }
+

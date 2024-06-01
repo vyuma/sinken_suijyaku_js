@@ -40,3 +40,62 @@
 body{
     background-color:#cde2f9;
 }
+
+#story_button{
+    display: block;
+  margin: 20px auto;
+  background-color: rgb(51, 110, 221);
+  color: white;
+  border: 0;
+  padding: 6px 10px;
+}
+#popup-wrapper {
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+#popup-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    position: relative;
+}
+#story_text{
+    margin: 5% auto;
+    margin-right: 3%;
+    margin-left: 3%;
+    font-size: 25px;
+    text-align: center;
+    line-height: 180%;
+    color: white;
+    text-shadow: 0px 0px 1px #ffffff,
+    0px 0px 20px #90ceff,
+    0px 0px 40px #90ceff,
+    0px 0px 60px #e1ffff,
+    0px 0px 80px #e1ffff;
+    font-family: "Yu Gothic";
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+    border: solid;
+    font-size: 20px;
+    font-family: "Yu Gothic";
+    color:#ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top:5px;
+    margin-right:5px;
+  }
