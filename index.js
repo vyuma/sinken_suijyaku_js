@@ -18,6 +18,8 @@ const explain = document.getElementById('explain');
 // ゲームカードの枚数
 const game_card = 9;
 
+
+
 let img_tag_arr = [];
 for (let i = 0; i < img_arr.length; i++ ){
     img_tag_arr.push("<img src='img/" + img_arr[i] + ".png'>")
@@ -111,6 +113,14 @@ function turn(e) {
         flgFirst = true;
     }
 }
+
+//時間切れ処理
+function Timeup(){
+    // modalの要素取得
+    const endmodal = document.getElementById('endmodal');   
+    endmodal.style.display = "block";
+}
+
 // タイマー開始
 function startTimer() {
     timer = setInterval(showSecond, 100);
@@ -118,12 +128,16 @@ function startTimer() {
 // 秒数表示
 function showSecond() {
     let nowTime = new Date();
-    //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
-    elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
-    let str  = elapsedTime_str + 's';
-    let re = document.getElementById('result');
-    re.innerHTML = str;
-    // 999秒になったら終了する処理（アラートの表示）
+    if (nowTime - startTime < 9100){
+        //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
+        elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
+        let str  = elapsedTime_str + '';
+        let re = document.getElementById('result');
+        re.innerHTML = str;
+    }else{
+        Timeup()
+    }
+    
     
 }
 
