@@ -6,6 +6,14 @@
     background-color: #cde2f9;
     flex-direction: column;
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
 .game_start{
     display: flex;
     align-items: center;
@@ -13,8 +21,22 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(96, 10, 10, 0.105);
+    margin: 20px;
+    text-decoration: none;
 }
+
+.story{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.078);
+    text-decoration: none;
+}
+
 body{
     background-color:#cde2f9;
 }
