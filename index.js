@@ -124,3 +124,8 @@ function showSecond() {
     // 999秒になったら終了する処理（アラートの表示）
     
 }
+
+// オーディオ再生
+function playAudio() {
+    
+}
