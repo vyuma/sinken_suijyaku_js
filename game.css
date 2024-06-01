@@ -58,7 +58,7 @@ img{
 
 /* 経過秒数 */
 #result {
-    padding: 50px 0;
+    padding: 10px 0;
     margin: 100px 0;
     font-size: 5em;
     text-align: center;
@@ -70,7 +70,7 @@ img{
 }
 
 .explain {
-    font-size: 1.4em;
+    font-size: 1.0em;
     font-weight: bold;
     font-family: "Yu Gothic";
     text-align: center;
@@ -80,13 +80,13 @@ img{
 }
 
 #explain {
-    font-size: 1.4em;
+    font-size: 1.0em;
     font-weight: bold;
     font-family: "Yu Gothic";
     text-align: center;
     background-color: rgba(119, 240, 178, 0.251);
-width: 300px;
-    height: 200px;
+    width: 300px;   
+    height: 325px;
 }
 
 #endmodal {
