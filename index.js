@@ -108,7 +108,7 @@ function showSecond() {
     let nowTime = new Date();
     //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
     elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
-    let str  = elapsedTime_str + '秒';
+    let str  = elapsedTime_str + 's';
     let re = document.getElementById('result');
     re.innerHTML = str;
     // 999秒になったら終了する処理（アラートの表示）
