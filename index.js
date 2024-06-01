@@ -68,6 +68,8 @@ function shuffle(arr) {
 // カードクリック時の処理
 function turn(e) {
     let div = e.target; //クリックしたカード
+    document.getElementById('audio').pause();
+    document.getElementById('audio').play();
     // カードのタイマー処理が動作中は return
     if (backTimer) return; //連続で押せないように
     // 裏向きのカードをクリックした場合は画像を表示する
@@ -125,7 +127,3 @@ function showSecond() {
     
 }
 
-// オーディオ再生
-function playAudio() {
-    
-}
