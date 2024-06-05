@@ -50,11 +50,22 @@ img{
 #result_field{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 100vh;
     width: 300px;
     margin: 0 0;
 }
 
+.pengin_explain{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#pengens{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
 
 /* 経過秒数 */
 #result {
