@@ -59,7 +59,7 @@ img{
 /* 経過秒数 */
 #result {
     padding: 10px 0;
-    margin: 100px 0;
+    margin: 0 0;
     font-size: 5em;
     text-align: center;
     font-weight: bold;

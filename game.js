@@ -23,6 +23,9 @@ var score = 0;
 // お手付き回数
 let err = 0;
 
+// 画像
+const img_pengin = document.getElementById('pengens');
+
 
 
 let img_tag_arr = [];
@@ -117,6 +120,8 @@ function turn(e) {
                 backTimer = NaN;
                 // ここにペンギンの名前を表示する処理を追加
                 explain.innerHTML = name_arr[cardFirst.number];
+
+                img_pengin.src = "img/" + img_arr[cardFirst.number] + ".png";
 
                 // alert(name_arr[cardFirst.number])
                 if (countUnit == game_card) { //すべて揃ったら（表にした枚数と画像配列の長さが一致したら）
