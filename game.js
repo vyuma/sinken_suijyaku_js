@@ -174,3 +174,34 @@ function showSecond() {
     
 }
 
+
+function buttonClick() {
+    const game = document.getElementById('saikai-gif');
+    // 
+    game.innerHTML = '<img id="saikai" src="gif/ペンギン再会.gif" alt="ペンギン再会.gif">'
+    //
+    let inputElm = document.getElementById('test-form').value;
+    if (inputElm == "ひげペンギン"){
+        location.reload();
+    }
+    else{
+        alert("違います！やりこんでもう一度挑戦してみましょう！");
+    }
+}
+
+const myname = document.getElementById('test-form');
+const button1 = document.getElementById('submit');
+const saikai = document.getElementById('saikai');
+
+button1.addEventListener('click', (e) => {
+    // デフォルトのイベントをキャンセル
+    e.preventDefault();
+
+    if(myname.value == "ひげペンギン"){ 
+        alert("正解です！")
+        saikai.src = "gif/ペンギン再会.gif"
+    } 
+    else {
+        alert("違います！やりこんでもう一度挑戦してみましょう！");
+    }
+});
