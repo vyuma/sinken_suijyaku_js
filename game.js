@@ -86,7 +86,6 @@ function Clear(){
     if (score < 0){
         score = 0
     }
-    alert(score)
     // resultの要素取得
     const resultmodal = document.getElementById('resultmodal');   
     resultmodal.style.display = "flex";
@@ -161,7 +160,7 @@ function startTimer() {
 // 秒数表示
 function showSecond() {
     let nowTime = new Date();
-    if (nowTime - startTime < 999100){ //最大秒数は999秒
+    if (nowTime - startTime < 99910){ //最大秒数は999秒
         //経過時間ミリ秒を1000で割って秒に戻し、toFixedで桁数指定した文字列を返す
         elapsedTime_str = ((nowTime - startTime)/1000).toFixed(1); 
         let str  = elapsedTime_str + '';
@@ -197,7 +196,7 @@ button1.addEventListener('click', (e) => {
     // デフォルトのイベントをキャンセル
     e.preventDefault();
 
-    if(myname.value == "ひげペンギン"){ 
+    if(myname.value == "ヒゲペンギン"){ 
         alert("正解です！")
         saikai.src = "gif/ペンギン再会.gif"
     } 
